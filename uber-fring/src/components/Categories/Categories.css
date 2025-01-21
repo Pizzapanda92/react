@@ -1,0 +1,39 @@
+.categories {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 20px;
+    background-color: #f8f8f8;
+  }
+  
+  .category-item {
+    display: flex; /* Aligner horizontalement */
+    align-items: center; /* Centrer verticalement */
+    gap: 10px; /* Espacement entre l'image/l'icône et le texte */
+    padding: 10px 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: white;
+    cursor: pointer;
+    font-size: 16px;
+    text-align: center;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  .category-item:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  .category-image {
+    width: 30px; /* Taille ajustée pour les images */
+    height: 30px;
+    object-fit: contain;
+    border-radius: 5px;
+  }
+  
+  .category-icon {
+    font-size: 20px; /* Taille de l'icône FontAwesome */
+    color: #333; /* Couleur par défaut */
+  }
+  

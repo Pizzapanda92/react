@@ -1,0 +1,44 @@
+.boutique-page {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    background-color: #f9f9f9;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  }
+  
+  .boutique-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 10px;
+    text-align: center;
+  }
+  
+  .boutique-info {
+    margin-bottom: 20px;
+    text-align: center;
+  }
+  
+  .articles-list {
+    list-style: none;
+    padding: 0;
+  }
+  
+  .article-item {
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+    font-size: 16px;
+  }
+  
+  .article-item:last-child {
+    border-bottom: none;
+  }
+  
+  .not-found {
+    text-align: center;
+    color: red;
+    font-size: 18px;
+    margin-top: 50px;
+  }
+  

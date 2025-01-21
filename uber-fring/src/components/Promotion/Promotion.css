@@ -1,0 +1,18 @@
+.promotion {
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin: 10px;
+    background-color: #f9f9f9;
+  }
+  
+  .promotion-content h3 {
+    margin: 0;
+    font-size: 1.2rem;
+  }
+  
+  .promotion-content p {
+    margin: 5px 0 0;
+    color: #555;
+  }
+  

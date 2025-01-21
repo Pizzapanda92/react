@@ -1,0 +1,74 @@
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 10px 20px;
+  background-color: #fff;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.logo {
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.search-bar {
+  flex: 1;
+  margin: 0 20px;
+  padding: 8px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+}
+
+.auth-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.auth-buttons .button-style {
+  position: relative;
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  text-align: center;
+  text-decoration: none;
+  color: white; /* Texte blanc */
+  background: #222; /* Fond noir */
+  border: 2px solid #444; /* Bordure sombre */
+  border-radius: 5px;
+  overflow: hidden; /* Cache les débordements */
+  transition: background-color 0.5s ease, color 0.5s ease; /* Transition fluide */
+}
+
+.auth-buttons .button-style:hover {
+  background: #333; /* Fond légèrement plus clair au survol */
+}
+
+.auth-buttons .button-style::before {
+  content: '';
+  position: absolute;
+  top: 0; /* Aligne le liseré au début du bouton */
+  left: -100%; /* Démarre hors du bouton */
+  width: 100%; /* Largeur limitée au bouton */
+  height: 3px; /* Liseré légèrement épaissi */
+  background: linear-gradient(90deg, transparent, rgba(255, 215, 0, 0.9), transparent); /* Lumière dorée subtile */
+  transform: rotate(45deg); /* Traverse en diagonale correcte */
+  z-index: 2; /* Passe devant le texte */
+  opacity: 0; /* Caché avant survol */
+  transition: none;
+  pointer-events: none; /* Ignore les clics */
+}
+
+.auth-buttons .button-style:hover::before {
+  left: 100%; /* Traverse jusqu’au coin inférieur droit */
+  opacity: 1; /* Rend visible le liseré */
+  transition: left 3s ease, opacity 0.5s ease; /* Animation fluide */
+}
+
+.auth-buttons .button-style span {
+  position: relative;
+  z-index: 1; /* Place le texte sous le liseré */
+}
