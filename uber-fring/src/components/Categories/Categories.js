@@ -1,8 +1,9 @@
 import React from 'react';
 import './Categories.css';
-import { useNavigate } from 'react-router-dom'; // Import de useNavigate
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faHome } from '@fortawesome/free-solid-svg-icons';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import 'swiper/css';
+import 'swiper/css/navigation';
+import { Navigation } from 'swiper/modules';
 
 import accessoire from '../../assets/image-categorie/accessoire.png';
 import casquette from '../../assets/image-categorie/casquette.png';
@@ -14,10 +15,8 @@ import sac from '../../assets/image-categorie/sac.png';
 import tshirt from '../../assets/image-categorie/t-shirt.png';
 
 function Categories({ onCategorySelect }) {
-  const navigate = useNavigate(); // Hook pour rediriger
-
   const categories = [
-    { name: 'Home', label: 'Accueil', icon: <FontAwesomeIcon icon={faHome} /> },
+    { name: 'Home', label: 'Accueil', image: null },
     { name: 'Pantalon', label: 'Pantalon', image: pantalon },
     { name: 'Chaussures', label: 'Chaussures', image: chaussures },
     { name: 'Costume', label: 'Costume', image: costume },
@@ -28,25 +27,37 @@ function Categories({ onCategorySelect }) {
     { name: 'T-shirt', label: 'T-shirt', image: tshirt },
   ];
 
-  const handleCategoryClick = (categoryName) => {
-    onCategorySelect(categoryName); // Applique le filtre
-    navigate('/'); // Redirige vers la page d'accueil
-  };
-
   return (
-    <div className="categories">
+    <Swiper
+      modules={[Navigation]}
+      spaceBetween={10} // Espace entre les boutons contrôlé ici
+      slidesPerView={5} // Nombre de catégories visibles en même temps
+      breakpoints={{
+        640: { slidesPerView: 2 }, // Mobile : 2 visibles
+        1024: { slidesPerView: 5 }, // Desktop : 5 visibles
+      }}
+      navigation
+      loop
+      className="categories-slider"
+    >
       {categories.map((category, index) => (
-        <button
-          key={index}
-          className="category-item"
-          onClick={() => handleCategoryClick(category.name)}
-        >
-          {category.image && <img src={category.image} alt={category.label} className="category-image" />}
-          {category.icon && <div className="category-icon">{category.icon}</div>}
-          <span>{category.label}</span>
-        </button>
+        <SwiperSlide key={index} className="category-slide">
+          <button
+            className="category-item"
+            onClick={() => onCategorySelect(category.name)}
+          >
+            {category.image && (
+              <img
+                src={category.image}
+                alt={category.label}
+                className="category-image"
+              />
+            )}
+            <span>{category.label}</span>
+          </button>
+        </SwiperSlide>
       ))}
-    </div>
+    </Swiper>
   );
 }
 

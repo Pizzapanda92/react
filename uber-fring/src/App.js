@@ -29,12 +29,10 @@ function App() {
     <Router>
       <div className="App">
         {/* Vidéo de fond */}
-        <video className="video-background" autoPlay loop muted playsInline preload="auto">
+        <video className="video-background" autoPlay loop muted>
           <source src="/background.mp4" type="video/mp4" />
           Your browser does not support the video tag.
         </video>
-
-
 
         {/* Contenu principal */}
         <Header onResetFilters={resetFilters} />

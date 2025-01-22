@@ -1,28 +1,24 @@
-/* Style du conteneur du slider */
 .popular-slider {
   width: 100%;
   padding: 20px;
 }
 
-/* Style individuel des slides */
 .swiper-slide {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 10px;
-  background-color: #fff; /* Couleur de fond */
-  border: 1px solid #ddd; /* Bordure */
-  border-radius: 8px; /* Coins arrondis */
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre */
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-/* Hover sur un slide */
 .swiper-slide:hover {
-  transform: scale(1.05); /* Zoom léger */
+  transform: scale(1.05);
   transition: transform 0.3s ease;
 }
 
-/* Style du contenu dans chaque slide */
 .place-card {
   text-align: center;
   font-size: 16px;
@@ -38,32 +34,15 @@
   margin: 10px 0;
 }
 
-.boutique-link {
-  display: inline-block;
-  padding: 8px 12px;
-  background-color: #007bff;
-  color: white;
-  text-decoration: none;
-  border-radius: 5px;
+/* Media Queries */
+@media (max-width: 768px) {
+  .swiper-slide {
+    max-width: 250px;
+  }
 }
 
-.boutique-link:hover {
-  background-color: #0056b3;
-}
-/* Style des flèches de navigation */
-
-
-/* Hover sur les flèches */
-.swiper-button-next:hover,
-.swiper-button-prev:hover {
-  background: rgba(0, 0, 0, 0.2);
-}
-
-/* Position des flèches */
-.swiper-button-next {
-  right: 10px;
-}
-
-.swiper-button-prev {
-  left: 10px;
+@media (max-width: 480px) {
+  .swiper-slide {
+    max-width: 200px;
+  }
 }

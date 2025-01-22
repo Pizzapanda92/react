@@ -1,39 +1,62 @@
-.categories {
+/* Conteneur de la barre blanche */
+.categories-slider {
+    width: 100%;
+    padding: 10px 0;
+    background-color: #fff; /* Fond blanc pour la ligne */
     display: flex;
-    justify-content: center;
-    gap: 20px;
-    padding: 20px;
-    background-color: #f8f8f8;
+    align-items: center;
+    position: relative;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Ombre sous la ligne */
   }
   
+  /* Boutons de catégorie */
   .category-item {
-    display: flex; /* Aligner horizontalement */
-    align-items: center; /* Centrer verticalement */
-    gap: 10px; /* Espacement entre l'image/l'icône et le texte */
+    display: flex;
+    align-items: center;
+    justify-content: center;
     padding: 10px 20px;
-    border: 1px solid #ddd;
-    border-radius: 5px;
-    background-color: white;
-    cursor: pointer;
-    font-size: 16px;
+    border: none; /* Pas de bordure */
+    background-color: #333; /* Fond noir des boutons */
+    color: white; /* Texte blanc */
+    font-size: 14px;
     text-align: center;
-    transition: background-color 0.3s, color 0.3s;
+    border-radius: 5px; /* Coins arrondis */
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0; /* Pas de marge autour des boutons */
   }
   
+  /* Espace entre les boutons (contrôlé par le slider lui-même) */
+  .swiper-slide {
+    margin: 0 5px; /* Légère marge horizontale */
+  }
+  
+  /* Effet au survol des boutons */
   .category-item:hover {
-    background-color: #007bff;
-    color: white;
+    background-color: #007bff; /* Fond bleu au survol */
+    transform: scale(1.05); /* Agrandissement léger */
   }
   
+  /* Images des catégories */
   .category-image {
-    width: 30px; /* Taille ajustée pour les images */
+    width: 30px;
     height: 30px;
-    object-fit: contain;
-    border-radius: 5px;
+    margin-right: 8px; /* Espacement entre l'image et le texte */
+    object-fit: contain; /* Ajuste l'image pour qu'elle reste propre */
   }
   
-  .category-icon {
-    font-size: 20px; /* Taille de l'icône FontAwesome */
-    color: #333; /* Couleur par défaut */
+  /* Flèches de navigation */
+  .swiper-button-prev,
+  .swiper-button-next {
+    color: white; /* Couleur des flèches */
+    background-color: rgba(0, 0, 0, 0.5); /* Fond semi-transparent */
+    border-radius: 50%; /* Forme circulaire */
+    width: 30px;
+    height: 30px;
+  }
+  
+  .swiper-button-prev:hover,
+  .swiper-button-next:hover {
+    background-color: rgba(0, 0, 0, 0.8); /* Fond plus foncé au survol */
   }
   
